@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101916">
+    <meta name="description" content="A thoughtful, browser-based game of chess.">
+    <title>Square One — Chess</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Square One chess home">
+          <span class="brand-mark" aria-hidden="true">♞</span>
+          <span>square<span class="brand-light">one</span></span>
+        </a>
+        <div class="topbar-note"><span class="online-dot"></span> YOUR NEXT MOVE STARTS HERE</div>
+        <span class="topbar-tag">BROWSER CHESS</span>
+      </header>
+
+      <main>
+        <section class="intro">
+          <div>
+            <p class="eyebrow">A QUIET GAME OF POSSIBILITY</p>
+            <h1>Take your time.<br><span>Make your move.</span></h1>
+          </div>
+          <p class="intro-copy">A board, a little space to think,<br class="desktop-break"> and a worthy opponent.</p>
+        </section>
+
+        <section class="game-layout" aria-label="Chess game">
+          <div class="board-column">
+            <div class="board-topline">
+              <div class="table-label"><span class="table-icon">♙</span><span>THE BOARD</span><span class="label-divider"></span><span class="live-label">RAPID · 10 + 10</span></div>
+              <div class="round-number" id="game-status-label">WHITE TO MOVE</div>
+            </div>
+            <div class="board-frame">
+              <div class="chess-board" id="chess-board" role="grid" aria-label="Chess board"></div>
+            </div>
+            <div class="board-footer">
+              <span><span class="footer-dot"></span> <span id="board-side-label">PLAYING WHITE</span></span>
+              <span>THINK AHEAD <span class="footer-spark">✦</span></span>
+            </div>
+          </div>
+
+          <aside class="game-panel" aria-label="Game information">
+            <div class="panel-heading">
+              <div><p class="eyebrow">YOUR GAME</p><h2 id="match-title">White vs. Computer</h2></div>
+              <span class="match-badge"><span></span><span id="match-state">READY</span></span>
+            </div>
+
+            <div class="mode-picker" aria-label="Choose an opponent">
+              <button class="mode-button" id="mode-computer-black" type="button" aria-pressed="true">
+                <span class="mode-icon" aria-hidden="true">✦</span>
+                <span><strong>AI as Black</strong><small>Play White vs. computer</small></span>
+                <span class="mode-check" aria-hidden="true">✓</span>
+              </button>
+              <button class="mode-button" id="mode-computer-white" type="button" aria-pressed="false">
+                <span class="mode-icon local-icon" aria-hidden="true">♟</span>
+                <span><strong>AI as White</strong><small>Computer plays White</small></span>
+                <span class="mode-check" aria-hidden="true">✓</span>
+              </button>
+              <button class="mode-button" id="mode-local" type="button" aria-pressed="false">
+                <span class="mode-icon local-icon" aria-hidden="true">♙</span>
+                <span><strong>Player 1 vs Player 2</strong><small>Two human players</small></span>
+                <span class="mode-check" aria-hidden="true">✓</span>
+              </button>
+            </div>
+
+            <div class="players">
+              <div class="player-card" id="player-black">
+                <div class="player-avatar avatar-black">♚</div>
+                <div class="player-info"><span class="player-name">Black</span><span class="player-turn" id="black-turn">OPPONENT</span></div>
+                <strong class="clock" id="black-clock" aria-label="Black clock">10:00</strong>
+              </div>
+              <div class="player-card active-player" id="player-white">
+                <div class="player-avatar avatar-white">♔</div>
+                <div class="player-info"><span class="player-name">You · White</span><span class="player-turn" id="white-turn">YOUR TURN</span></div>
+                <strong class="clock" id="white-clock" aria-label="White clock">10:00</strong>
+              </div>
+            </div>
+
+            <div class="turn-card" aria-live="polite">
+              <span class="turn-icon" id="turn-icon">♙</span>
+              <div><strong id="turn-title">Your move</strong><span id="turn-message">Select a piece, then choose where it goes.</span></div>
+            </div>
+
+            <div class="captured-section">
+              <div class="section-label"><span>CAPTURED BY YOU</span><span id="white-material">—</span></div>
+              <div class="captured-pieces" id="white-captures" aria-label="Pieces captured by White"></div>
+              <div class="section-label captured-label"><span>CAPTURED BY BLACK</span><span id="black-material">—</span></div>
+              <div class="captured-pieces" id="black-captures" aria-label="Pieces captured by Black"></div>
+            </div>
+
+            <div class="moves-section">
+              <div class="section-label"><span>MOVE HISTORY</span><span id="move-count">0 MOVES</span></div>
+              <div class="move-list" id="move-list" aria-live="polite"><p class="empty-moves">The first move is yours.</p></div>
+            </div>
+
+            <div class="game-controls">
+              <button class="secondary-button" id="undo-button" type="button" disabled aria-label="Undo last turn">
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5 3.5 8 7 11M4 8h7a5 5 0 1 1-4.8 6.4"/></svg>
+                Undo
+              </button>
+              <button class="secondary-button" id="flip-button" type="button" aria-label="Flip board">
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7h13l-3-3m4 9H4l3 3"/></svg>
+                Flip board
+              </button>
+            </div>
+            <button class="reset-button" id="reset-button" type="button">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3.5 8A6.5 6.5 0 1 1 4 12m-.5-8v4h4"/></svg>
+              New game
+            </button>
+            <p class="game-note">Standard chess rules · 10 minutes + 10 seconds per move</p>
+          </aside>
+        </section>
+      </main>
+
+      <footer class="site-footer"><span>MADE FOR THE LOVE OF THE GAME</span><span>ONE MOVE AT A TIME.</span></footer>
+    </div>
+
+    <div class="winner-banner" id="winner-banner" aria-live="polite" aria-atomic="true">
+      <div class="winner-content">
+        <span class="winner-tag">Victory</span>
+        <strong id="winner-message">White wins</strong>
+      </div>
+    </div>
+    <dialog class="promotion-dialog" id="promotion-dialog" aria-labelledby="promotion-title">
+      <p class="eyebrow">A PAWN HAS REACHED THE END</p>
+      <h2 id="promotion-title">Choose a promotion</h2>
+      <div class="promotion-options" id="promotion-options"></div>
+    </dialog>
+    <script src="chess.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>
