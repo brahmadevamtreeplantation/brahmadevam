@@ -1,4 +1,4 @@
-# Square One
+# Chess King
 
 A responsive, browser-based chess game with a built-in computer opponent and local pass-and-play. The app uses standard chess rules, a 10-minute clock with a 10-second increment, and no build step or third-party game dependencies.
 
