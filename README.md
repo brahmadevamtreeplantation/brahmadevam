@@ -5,7 +5,7 @@ A responsive, browser-based chess game with a built-in computer opponent and loc
 ## Run
 
 Open `index.html` in a current browser, or serve this folder with any static web server.
-Use the website's **Download game** button to download `Chess-King.zip`, then extract it and open `index.html`.
+Use the website's **Download game** button to download `Chess-King.zip`, then extract it and open `index.html`. The Chess King icon is included with the downloaded files.
 
 ## Play
 
