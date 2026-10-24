@@ -29,10 +29,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid #e9ce8e; outline-offs
 .brand-mark { width: 27px; height: 27px; display: grid; place-items: center; color: #193322; background: var(--green); border-radius: 8px; font-size: 19px; }
 .topbar-note { color: #91a197; font-size: 9px; font-weight: 700; letter-spacing: 1.4px; display: flex; align-items: center; gap: 9px; }
 .online-dot,.match-badge > span:first-child { width: 6px; height: 6px; display: inline-block; border-radius: 50%; background: #abd396; box-shadow: 0 0 9px #abd39680; }
-.download-button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 34px; padding: 0 12px; color: #1c2b20; background: var(--green); border: 1px solid #d5e6c3; border-radius: 7px; text-decoration: none; font-size: 9px; font-weight: 700; transition: background .15s, transform .15s; }
-.download-button:hover { background: #d0e3b8; }
-.download-button:active { transform: scale(.98); }
-.download-button svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.topbar-tag { color: #718178; font-size: 8px; font-weight: 700; letter-spacing: 1.2px; }
 .intro { display: flex; justify-content: space-between; align-items: end; padding: 39px 0 31px; }
 .eyebrow { margin: 0 0 9px; color: #92a397; font-size: 9px; font-weight: 700; letter-spacing: 1.65px; }
 h1,h2,p { margin-top: 0; }
@@ -158,7 +155,7 @@ h2 { font: 700 17px Manrope,sans-serif; letter-spacing: -.4px; margin: 0; }
   .page-shell { padding: 0 16px; }
   .topbar { height: 64px; }
   .topbar-note { display: none; }
-  .download-button { min-height: 32px; padding: 0 10px; }
+  .topbar-tag { font-size: 7px; }
   .intro { padding: 27px 0 21px; display: block; }
   h1 { font-size: 32px; }
   .intro-copy { margin: 10px 0 0; font-size: 11px; }
@@ -185,7 +182,7 @@ h2 { font: 700 17px Manrope,sans-serif; letter-spacing: -.4px; margin: 0; }
 }
 @media (max-width: 380px) {
   .page-shell { padding: 0 12px; }
-  .download-button { gap: 5px; padding: 0 8px; font-size: 8px; }
+  .topbar-tag { font-size: 6px; letter-spacing: .5px; }
   .board-frame { padding: 10px; }
   .game-panel { padding: 14px; }
   .player-card { padding: 5px; gap: 5px; }
