@@ -5,7 +5,11 @@ A responsive, browser-based chess game with a built-in computer opponent and loc
 ## Run
 
 Open `index.html` in a current browser, or serve this folder with any static web server.
-Use the website's **Download game** button to download `Chess-King.zip`, then extract it and open `index.html`. The Chess King icon is included with the downloaded files.
+Use the website's **Download Android app** button to download and install the Chess King APK on an Android device. The APK is built and published from GitHub Actions.
+
+To run the browser version locally, open `index.html` in a current browser or serve this folder with any static web server. The source bundle is available as `Chess-King.zip`.
+
+The Android wrapper loads a local copy of the game, so chess play works offline after installation. The website link opens when an internet connection is available.
 
 ## Play
 
