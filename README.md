@@ -1,11 +1,11 @@
-# Chess King
+# CHESS MASTER
 
 A responsive, browser-based chess game with a built-in computer opponent and local pass-and-play. The app uses standard chess rules, a 10-minute clock with a 10-second increment, and no build step or third-party game dependencies.
 
 ## Run
 
 Open `index.html` in a current browser, or serve this folder with any static web server.
-Play Chess King at [brahmadevamtreeplantation.github.io/brahmadevam](https://brahmadevamtreeplantation.github.io/brahmadevam/). Download and install the Chess King APK on an Android device from the [latest GitHub release](https://github.com/brahmadevamtreeplantation/brahmadevam/releases/latest).
+Play CHESS MASTER at [brahmadevamtreeplantation.github.io/brahmadevam](https://brahmadevamtreeplantation.github.io/brahmadevam/). Download and install the CHESS MASTER APK on an Android device from the [latest GitHub release](https://github.com/brahmadevamtreeplantation/brahmadevam/releases/latest).
 
 To run the browser version locally, open `index.html` in a current browser or serve this folder with any static web server. The source bundle is available as `Chess-King.zip`.
 

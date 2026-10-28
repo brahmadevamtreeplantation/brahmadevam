@@ -61,6 +61,6 @@ jobs:
           tag="v1.0.${GITHUB_RUN_NUMBER}"
           gh release create "$tag" Chess-King.apk \
             --target "$GITHUB_SHA" \
-            --title "Chess King Android ${tag}" \
+            --title "CHESS MASTER Android ${tag}" \
             --notes "Installable Android debug build. The game runs offline after installation." \
             --latest

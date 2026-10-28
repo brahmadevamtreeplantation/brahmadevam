@@ -4,7 +4,7 @@
     <application
         android:allowBackup="false"
         android:icon="@drawable/chess_king_icon"
-        android:label="Chess King"
+        android:label="CHESS MASTER"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="false">
