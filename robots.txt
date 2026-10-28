@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://brahmadevamtreeplantation.github.io/square-one-chess/sitemap.xml
+Sitemap: https://brahmadevamtreeplantation.github.io/brahmadevam/sitemap.xml
